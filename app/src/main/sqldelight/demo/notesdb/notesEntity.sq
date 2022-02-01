@@ -1,0 +1,13 @@
+CREATE TABLE  notesEntity(
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+
+getNoteById: SELECT * FROM notesEntity WHERE id = :id;
+
+getAllNotes: SELECT * FROM notesEntity;
+
+insertNote: INSERT OR REPLACE INTO notesEntity VALUES (?,?,?);
+
+deletePersonById: DELETE FROM notesEntity WHERE id = :id;
